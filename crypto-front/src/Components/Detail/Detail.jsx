@@ -85,7 +85,7 @@ function Detail() {
     };
 
     if (coin_id) {
-      fetchData(); 
+      fetchCoin(); 
     }
 
   }, [coin_id]);
