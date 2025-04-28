@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Portfolio.css';
 import { useNavigate } from 'react-router-dom';
 import back from '../../assets/back.png';
+import Detail from '../Detail/Detail';
 
 const Portfolio = () => {
   const [cryptos, setCryptos] = useState([]);
@@ -19,7 +20,7 @@ const Portfolio = () => {
   useEffect(() => {
     const fetchCryptos = async () => {
       try{
-        const response = await fetch("http://127.0.0.1:8000/cryptos");
+        const response = await fetch("https://crypto-backend-production-2a02.up.railway.app/cryptos");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -43,7 +44,7 @@ const Portfolio = () => {
     const selected = cryptos.find(crypto =>
       crypto.name.toLowerCase() === selectedCrypto.toLowerCase()
     );
-    console.log('Selected Crypto:', selected); // Log selected crypto
+    // console.log('Selected Crypto:', selected);
     if (selected) {
       setCurrentPrice(selected.price_dollars);
     } else {

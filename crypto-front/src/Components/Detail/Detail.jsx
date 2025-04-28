@@ -31,7 +31,7 @@ function Detail() {
         setChartLoading(true);
         setChartError(null);
         try {
-          const response = await fetch(`http://127.0.0.1:8000/chart/${coin_id}`);
+          const response = await fetch(`https://crypto-backend-production-2a02.up.railway.app/chart/${coin_id}`);
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
@@ -55,6 +55,8 @@ function Detail() {
       if (coin_id) {
         fetchData(); 
       }
+      const interval = setInterval(fetchData, 300000);
+      return () => clearInterval(interval);
     }, [coin_id]);
 
     const currentPrice = chartData.length > 0 
@@ -68,7 +70,7 @@ function Detail() {
       setCoinError(null);
 
       try {
-        const response = await fetch(`http://127.0.0.1:8000/${coin_id}`);
+        const response = await fetch(`https://crypto-backend-production-2a02.up.railway.app/${coin_id}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -111,7 +113,9 @@ function Detail() {
         (
           <div className="coin-details">
             <h1>Description</h1>
-            <p className="description">{coin.description}</p>
+            {coin.description !== "" ? 
+            <p className="description">{coin.description}</p> : <p>No Description</p>
+            }
             {coin.whitepaper && coin.whitepaper !== "" ? (
             <div className="whitepaper">
               <a href={coin.whitepaper} target="_blank" rel="noopener noreferrer">

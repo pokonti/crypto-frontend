@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import './Home.css'
 import Menu from '../Menu/Menu';
 import Table from '../Table/Table';
-import chatbotImage from '../../assets/chatbot.png';
 import ChatAssistant from '../ChatAssistant/ChatAssistant';
 
 
@@ -14,7 +13,7 @@ function Home() {
   useEffect(() => {
     const fetchCryptos = async () => {
       try{
-        const response = await fetch("http://127.0.0.1:8000/cryptos");
+        const response = await fetch("https://crypto-backend-production-2a02.up.railway.app/cryptos");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -25,8 +24,10 @@ function Home() {
         console.error('Error to fetching cryptos:', error);
       } 
     };
-
+    
     fetchCryptos();
+    const interval = setInterval(fetchCryptos, 300000);
+    return () => clearInterval(interval);
   }, []);
 
   const filteredCryptos = cryptos.filter((crypto) =>
@@ -38,7 +39,7 @@ function Home() {
       <Menu searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       
       <Table cryptos={filteredCryptos} />
-     
+
       <ChatAssistant></ChatAssistant>
     </>
    
