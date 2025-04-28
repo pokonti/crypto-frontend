@@ -26,12 +26,6 @@ This is the frontend part of the Crypto application. The app provides real-time 
 * Ensure that you have Node.js and npm installed.
 * You will also need Python 3.8+ and pip installed for setting up the backend (FastAPI).
 
-### Prerequisites
-
-- Node.js (>= 14.x.x)
-- Python 3.8 or higher
-- Virtual environment (for backend setup)
-
 ### Frontend Setup
 
 1. Clone the repository:

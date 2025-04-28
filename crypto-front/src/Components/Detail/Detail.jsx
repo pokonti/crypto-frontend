@@ -55,8 +55,6 @@ function Detail() {
       if (coin_id) {
         fetchData(); 
       }
-      const interval = setInterval(fetchData, 300000);
-      return () => clearInterval(interval);
     }, [coin_id]);
 
     const currentPrice = chartData.length > 0 
@@ -85,9 +83,11 @@ function Detail() {
         
       }
     };
+
     if (coin_id) {
-      fetchCoin(); 
+      fetchData(); 
     }
+
   }, [coin_id]);
 
   return (
@@ -113,9 +113,7 @@ function Detail() {
         (
           <div className="coin-details">
             <h1>Description</h1>
-            {coin.description !== "" ? 
-            <p className="description">{coin.description}</p> : <p>No Description</p>
-            }
+            <p className="description">{coin.description}</p>
             {coin.whitepaper && coin.whitepaper !== "" ? (
             <div className="whitepaper">
               <a href={coin.whitepaper} target="_blank" rel="noopener noreferrer">
