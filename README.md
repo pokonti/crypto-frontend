@@ -19,12 +19,34 @@ This is the frontend part of the Crypto application. The app provides real-time 
 * **Exchange Rate API:** For converting usd to kzt
 * **Gemini API:** For the AI Assistant to provide market insights and advice
 * **Recharts:** For visualizing cryptocurrency price changes over time with interactive charts
-
+* **Skeleton:** Used for engaging and smooth loading states, improving user experience during data fetching
 
 ## Installation and Setup
 ### Prerequisites
 * Ensure that you have Node.js and npm installed.
 * You will also need Python 3.8+ and pip installed for setting up the backend (FastAPI).
+
+### Prerequisites
+
+- Node.js (>= 14.x.x)
+- Python 3.8 or higher
+- Virtual environment (for backend setup)
+
+### Frontend Setup
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/pokonti/crypto-frontend
+   cd crypto-front
+   ```
+2. Install the dependencies:
+    ```
+    npm install
+    ```
+3. Start the development server:
+    ```
+    npm run dev
+    ```
 
 ## Design and Development Process
 ### Frontend Design
@@ -32,11 +54,12 @@ The frontend is built using React.js to provide a dynamic, responsive interface.
 
 ### Backend Design
 The backend is powered by FastAPI, a high-performance web framework for building APIs with Python. I used CoinGecko API to fetch real-time cryptocurrency prices and Exchange Rate API to convert prices into tenge (kzt). The AI assistant is powered by Gemini API, which provides valuable insights and recommendations on the market trends.
-
 The backend runs in an asynchronous manner, fetching updated cryptocurrency data every 60 seconds using background tasks to ensure the data is always fresh.
 
 ### Issues occured 
 - There was an issue during API rate limiting, it has been overloaded, but then i solved this problem by implementing caching and rate limit
+- To display cryptocurrency prices in KZT, I used a separate Exchange Rate API
+- I chose to update cryptocurrency prices every 5 minutes on the frontend, but data is updated every 60 sec on the backend
 - Also deployment was a little bit tiring process
 
 ### Future Improvements
@@ -46,7 +69,8 @@ The backend runs in an asynchronous manner, fetching updated cryptocurrency data
 - A new component with only crypto currency news
 
 
-
+### Backend Link
+https://github.com/pokonti/crypto-backend
 
 
 
