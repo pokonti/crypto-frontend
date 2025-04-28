@@ -54,6 +54,7 @@ The backend runs in an asynchronous manner, fetching updated cryptocurrency data
 - There was an issue during API rate limiting, it has been overloaded, but then i solved this problem by implementing caching and rate limit
 - To display cryptocurrency prices in KZT, I used a separate Exchange Rate API
 - I chose to update cryptocurrency prices every 5 minutes on the frontend, but data is updated every 60 sec on the backend
+- **If you click on several cryptocurrency in order to see graph, the page won't respond**
 - Also deployment was a little bit tiring process
 
 ### Future Improvements
