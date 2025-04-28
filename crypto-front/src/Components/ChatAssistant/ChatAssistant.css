@@ -1,0 +1,144 @@
+.ai-assistant .icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+  
+.ai-assistant .icon img {
+    width: 50px;
+    height: 50px;
+}
+  
+.chat-window {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-out;
+}
+  
+@keyframes slideIn {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+  
+  
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    background-color: #bebbe9;
+    border-radius: 10px 10px 0 0;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+  
+.message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+  
+.message {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    position: relative;
+    word-wrap: break-word;
+}
+  
+.message.user {
+    align-self: flex-end;
+    background-color: #5a52d5;
+    color: white;
+    border-top-right-radius: 0;
+}
+  
+.message.assistant {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+    color: #333;
+    border-top-left-radius: 0;
+}
+  
+.chat-body .message p {
+    margin: 0;
+}
+
+  
+.chat-input {
+    position: relative;
+    width: 95%;
+    padding: 10px;
+  }
+  
+.chat-input textarea {
+    width: 100%;
+    padding: 12px;
+    padding-right: 50px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+  
+.chat-input textarea:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.1);
+}
+  
+.send-button {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    background: #bebbe9;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+  
+.send-button:hover {
+    background: #5a52d5;
+}
+  
+.send-button img {
+    width: 16px;
+    height: 16px;
+}
+  
+
+  
+  

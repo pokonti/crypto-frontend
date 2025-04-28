@@ -1,0 +1,138 @@
+.detail-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+  
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #515050;
+    height: 250px;
+}
+.loading-container p{
+    margin-bottom: 50px;
+}
+.error-container {
+    background-color: #fee2e2;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    
+}
+  
+.crypto-header {
+    margin-bottom: 24px;
+}
+  
+.crypto-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+  
+.price-container {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+  
+.current-price {
+    font-size: 25px;
+    font-weight: 700;
+}
+  
+.price-change {
+    font-size: 20px;
+    font-weight: 600;
+}
+  
+.price-up {
+    color: #059669;
+}
+  
+.price-down {
+    color: #dc2626;
+}
+  
+.chart-container {
+    background-color: #f9fafb;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+}
+
+  
+.update-timestamp {
+    text-align: center;
+    font-size: 15px;
+    color: #6b7280;
+}
+
+.coin-details {
+    margin-top: 20px;
+  }
+  
+  .description {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+  
+  .whitepaper {
+    margin-top: 20px;
+  }
+  
+.whitepaper button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+.price-change {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+  
+.go-back-button {
+    position: fixed;
+    left: 20px; 
+    padding: 10px; 
+    cursor: pointer; 
+    width: 50px;
+    height: 50px; 
+}
+
+/* animation */
+.crypto-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    animation: rotate 2s infinite linear;
+}
+  
+.spinner-icon {
+    margin: 10px;
+}
+  
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+  
+  

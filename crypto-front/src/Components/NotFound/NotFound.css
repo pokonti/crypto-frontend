@@ -1,0 +1,105 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    position: relative;
+}
+  
+.blockchain-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+  
+.block {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background-color: rgba(100, 240, 213, 0.05);
+    border: 1px solid rgba(100, 240, 213, 0.2);
+    border-radius: 4px;
+    animation: float 20s infinite linear;
+    opacity: 0.6;
+}
+  
+  
+.content-box {
+    z-index: 2;
+    text-align: center;
+    padding: 30px;
+    background-color: rgba(15, 15, 32, 0.8);
+    box-shadow: 0 0 40px rgba(100, 240, 213, 0.2);
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+}
+  
+.error-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 80px;
+    font-weight: bold;
+}
+  
+.four {
+    color: #64f0d5;;
+    text-shadow: 0 0 10px rgba(100, 240, 213, 0.7);
+}
+  
+.zero {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 10px;
+}
+  
+.coin {
+    animation: rotate 10s infinite linear;
+}
+  
+@keyframes rotate {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+}
+  
+.title {
+    color: #64f0d5;
+    font-size: 30px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+} 
+  
+.action-button {
+    padding: 15px;
+    background-color: #64f0d5;
+    color: #0f0f20;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+
