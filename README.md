@@ -73,6 +73,10 @@ The backend runs in an asynchronous manner, fetching updated cryptocurrency data
 ### Backend Link
 https://github.com/pokonti/crypto-backend
 
+### Video Link
+https://youtu.be/ppptfSeewVo
+
+
 
 
 
