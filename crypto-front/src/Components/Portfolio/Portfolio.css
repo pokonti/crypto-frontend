@@ -1,77 +1,75 @@
 
-  .portfolio-container {
-    width: 80%;
-    max-width: 1200px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft box shadow */
-    padding-bottom: 30px;
-  }
+.portfolio-container {
+  width: 80%;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  padding-bottom: 30px;
+}
   
+h1 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-  h1 {
-    font-size: 36px;
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
+label {
+  font-size: 16px;
+  color: #555;
+  display: block;
+  margin: 10px 0 5px;
+}
 
-  label {
-    font-size: 16px;
-    color: #555;
-    display: block;
-    margin: 10px 0 5px;
-  }
-  
-  select, input[type="number"], button {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
+select, input[type="number"], button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
 
 .calculate-button  button {
-    background-color: #000000;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-  }
+  background-color: #000000;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+}
   
 .calculate-button  button:hover {
-    background-color: #171616; 
-  }
+  background-color: #171616; 
+}
 
-  .profit-loss {
-    font-size: 20px;
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 8px;
-  }
+.profit-loss {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+}
   
-  .profit-loss.positive {
-    background-color: #e7f8e7;
-    color: #328b46;
-  }
+.profit-loss.positive {
+  background-color: #e7f8e7;
+  color: #328b46;
+}
   
-  .profit-loss.negative {
-    background-color: #f8e7e7;
-    color: #dc3545;
-  }
+.profit-loss.negative {
+  background-color: #f8e7e7;
+  color: #dc3545;
+}
   
 .go-back-button {
-    position: fixed;
-    left: 20px; 
-    padding: 10px; 
-    cursor: pointer; 
-    width: 50px;
-    height: 50px; 
+  position: fixed;
+  left: 20px; 
+  padding: 10px; 
+  cursor: pointer; 
+  width: 50px;
+  height: 50px; 
 }
 

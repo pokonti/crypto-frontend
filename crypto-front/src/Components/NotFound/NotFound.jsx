@@ -1,28 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './NotFound.css';
 
 const NotFound = () => {
-  const [blocks, setBlocks] = useState([]);
-  
-  useEffect(() => {
-    // Generate random blockchain-like blocks
-    const generateBlocks = () => {
-      const newBlocks = [];
-      for (let i = 0; i < 20; i++) {
-        newBlocks.push({
-          id: i,
-          hash: Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15),
-          left: Math.random() * 80,
-          top: Math.random() * 80,
-          delay: Math.random() * 5
-        });
-      }
-      setBlocks(newBlocks);
-    };
-    
-    generateBlocks();
-  }, []);
-
   return (
     <div className="not-found-container">
       <div className="content-box">

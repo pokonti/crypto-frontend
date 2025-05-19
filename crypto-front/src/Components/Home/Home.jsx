@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     const fetchCryptos = async () => {
       try{
-        const response = await fetch("https://crypto-backend-production-2a02.up.railway.app/cryptos");
+        const response = await fetch("http://127.0.0.1:8000/cryptos");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

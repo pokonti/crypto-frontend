@@ -31,7 +31,7 @@ function Detail() {
         setChartLoading(true);
         setChartError(null);
         try {
-          const response = await fetch(`https://crypto-backend-production-2a02.up.railway.app/chart/${coin_id}`);
+          const response = await fetch(`http://127.0.0.1:8000/chart/${coin_id}`);
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
           }
@@ -68,7 +68,7 @@ function Detail() {
       setCoinError(null);
 
       try {
-        const response = await fetch(`https://crypto-backend-production-2a02.up.railway.app/${coin_id}`);
+        const response = await fetch(`http://127.0.0.1:8000/${coin_id}`);
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

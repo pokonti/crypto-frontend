@@ -1,0 +1,59 @@
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 80px auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(128, 0, 128, 0.2);
+}
+  
+.loginForm h2 {
+  margin-bottom: 1.5rem;
+  color: #5a52d5; 
+  text-align: center;
+}
+  
+.loginForm input {
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+  
+.loginForm input:focus {
+    border-color: #bebbe9;
+    box-shadow: 0 0 5px rgba(108, 45, 199, 0.4);
+}
+  
+.loginForm button {
+  padding: 12px;
+  background-color: #5a52d5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+  
+.signupLink {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 14px;
+}
+  
+.signupLink a {
+  color: #6c2dc7;
+  text-decoration: none;
+  font-weight: 500;
+}
+  
+.signupLink a:hover {
+  text-decoration: underline;
+}

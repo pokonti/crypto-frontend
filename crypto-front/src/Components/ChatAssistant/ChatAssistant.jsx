@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './ChatAssistant.css';
 import chatbotImage from '../../assets/chatbot.png';
 import ReactMarkdown from "react-markdown";
@@ -9,14 +9,52 @@ function ChatAssistant() {
     const [messages, setMessages] = useState([]);
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [loading, setLoading] = useState(false);
-  
+    const token = localStorage.getItem("token");
+    const isAuthenticated = !!token;
+
     const toggleChatWindow = () => {
       setIsChatOpen(!isChatOpen);
     };
+
+    useEffect(() => {
+      const fetchChatHistory = async () => {
+        if (!token || !isChatOpen) return;
   
+        try {
+          const res = await fetch("http://127.0.0.1:8000/memory-chat/", {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
+  
+          if (!res.ok) throw new Error("Failed to load chat history");
+  
+          const data = await res.json();
+  
+          if (data.chat_history) {
+            const parsedMessages = data.chat_history.map((line) => {
+              const [role, ...textParts] = line.split(": ");
+              return {
+                sender: role.toLowerCase() === "assistant" ? "assistant" : "user",
+                text: textParts.join(": "),
+              };
+            });
+  
+            setMessages(parsedMessages);
+          }
+        } catch (err) {
+          console.error("Error loading chat history:", err);
+        }
+      };
+  
+      fetchChatHistory();
+    }, [isChatOpen, token]);
+
+
     const handleSend = async () => {
       if (!prompt.trim()) return;
-  
+
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: prompt, sender: 'user' },
@@ -26,9 +64,12 @@ function ChatAssistant() {
 
       try {
         setLoading(true);
-        const response = await fetch('https://crypto-backend-production-2a02.up.railway.app/chat', {
+        const response = await fetch('http://127.0.0.1:8000/memory-chat/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
           body: JSON.stringify({ prompt }),
         });
   
@@ -63,7 +104,6 @@ function ChatAssistant() {
             <div className="chat-header">
               AI Assistant
             </div>
-  
             <div className="chat-body">
               <div className="message-container">
                 {messages.map((message, index) => (
@@ -74,6 +114,10 @@ function ChatAssistant() {
                     <p><ReactMarkdown>{message.text}</ReactMarkdown></p>
                   </div>
                 ))}
+                {!isAuthenticated && 
+                (
+                  <div className='message assistant'>Please authenticate first to use the assistant.</div>
+                )}
                 {loading && (
                     <div className="message assistant">
                     <p>AI typing...</p>
@@ -86,10 +130,16 @@ function ChatAssistant() {
                 <textarea
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();   
+                        handleSend();        
+                      }
+                    }}
                     placeholder="Type your message..."
                     rows="2"
                 />
-                <button onClick={handleSend} className="send-button">
+                <button onClick={handleSend} disabled={!isAuthenticated} className="send-button">
                     <img src={arrow} alt="" />
                 </button>
             </div>

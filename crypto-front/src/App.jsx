@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Portfolio from './Components/Portfolio/Portfolio';
 import NotFound from './Components/NotFound/NotFound';
+import Login from './Components/Authentication/Login'
+import SignUp from './Components/Authentication/SignUp';
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
                 <Route path="/crypto/:coin_id" element={<Detail />} />
                 <Route path="/portfolio" element={<Portfolio />} />
                 <Route path="*" element={<NotFound />} />
+                <Route path='/login' element={<Login/>}/>
+                <Route path="/signup" element={<SignUp />} />
             </Routes>
         </Router>
     </>
